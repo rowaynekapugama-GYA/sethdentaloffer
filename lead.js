@@ -1,11 +1,14 @@
 // lead.js  —  SmileOx lead intake (Vercel serverless function)
-// The landing page POSTs a JSON lead to /api/lead; this forwards it to the
-// SmileOx intake address as a JSON email via Resend (delivered over TLS).
-// No SMTP, no npm install (uses Node's built-in fetch).
+// Matches the SMTP setup already used by the Wollongong Implant Institute and
+// implant360 projects, so the SAME env vars/credentials can be reused.
+//
+// The landing page POSTs a JSON lead to /api/lead; this emails it to the
+// SmileOx intake address as a JSON body over TLS.
+
+const nodemailer = require("nodemailer");
 
 const INTAKE = process.env.INTAKE_ADDRESS ||
   "seth-dental-invisalign+c3bf8524-ef4e-42a6-ad9b-481cab01dc28@intake.smileox.com.au";
-const FROM   = process.env.FROM_EMAIL || "Seth Dental Website <onboarding@resend.dev>";
 const ORIGIN = process.env.ALLOWED_ORIGIN || "*";
 
 module.exports = async function handler(req, res) {
@@ -33,24 +36,23 @@ module.exports = async function handler(req, res) {
       source: b.source || "Invisalign Smile Event Landing Page"
     };
 
-    const r = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        from: FROM,
-        to: [INTAKE],
-        subject: "Website form submission",
-        text: JSON.stringify(payload)
-      })
+    const port = Number(process.env.SMTP_PORT || 465);
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port,
+      secure: port === 465,   // 465 = implicit TLS; 587 = STARTTLS below
+      requireTLS: true,        // enforce TLS either way (SmileOx requires it)
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
     });
 
-    if (!r.ok) {
-      console.error("Resend error:", r.status, await r.text().catch(() => ""));
-      return res.status(502).json({ error: "Could not submit. Please try again." });
-    }
+    await transporter.sendMail({
+      to: INTAKE,
+      from: process.env.SMTP_FROM,
+      subject: "Website form submission",
+      text: JSON.stringify(payload),        // plain-text JSON body, per SmileOx
+      headers: { "Content-Type": "text/plain" }
+    });
+
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error("SmileOx intake error:", err);

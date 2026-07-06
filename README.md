@@ -1,51 +1,54 @@
 # Seth Dental Gerringong - Invisalign Smile Event landing page
 
 Paid-traffic (Google / Meta Ads) landing page with a qualifier quiz that feeds
-leads straight into SmileOx. Everything lives in this one repo, flat, no
-subfolders.
+leads straight into SmileOx. Everything is flat, no subfolders.
 
 ## Files
-- `index.html` - the landing page (all images/fonts load from CDN/imgur).
+- `index.html` - the landing page (images/fonts load from CDN/imgur).
 - `lead.js` - serverless function; the form posts here and it emails the lead to the SmileOx intake.
-- `vercel.json` - routes `/api/lead` to `lead.js` and serves `index.html` for everything else.
-- `package.json` - minimal project file.
+- `vercel.json` - routes `/api/lead` to `lead.js`, serves `index.html` for everything else.
+- `package.json` - project file (includes the `nodemailer` dependency).
 
-## Deploy (Vercel)
-1. Create a new GitHub repo and upload these four files to the root (no folders).
-2. In Vercel, "Add New Project" and import that repo. Framework preset: **Other**. Deploy.
-3. Add Environment Variables (Vercel > Project > Settings > Environment Variables):
+## Deploy (Vercel) - same setup as the Wollongong Implant Institute project
+1. Create a new GitHub repo and upload these files to the root (no folders).
+2. In Vercel, Add New > Project, import the repo, framework preset "Other", deploy.
+3. Add Environment Variables (Settings > Environment Variables), then redeploy.
+
+   Use the SAME SMTP values already on your Wollongong / implant360 projects:
 
    | Name | Value |
    |------|-------|
-   | `RESEND_API_KEY` | your key from resend.com (free tier is fine) |
+   | `SMTP_HOST` | (copy from your existing project) |
+   | `SMTP_PORT` | (copy - usually 465) |
+   | `SMTP_USER` | (copy) |
+   | `SMTP_PASS` | (copy) |
+   | `SMTP_FROM` | (copy, e.g. no-reply@sethdentalgerringong.com.au) |
    | `INTAKE_ADDRESS` | `seth-dental-invisalign+c3bf8524-ef4e-42a6-ad9b-481cab01dc28@intake.smileox.com.au` |
-   | `FROM_EMAIL` | `Seth Dental Website <onboarding@resend.dev>` (works with no DNS) |
-   | `ALLOWED_ORIGIN` | your final landing-page URL, e.g. `https://invisalign.sethdentalgerringong.com.au` |
+   | `ALLOWED_ORIGIN` | your landing-page URL, e.g. `https://invisalign.sethdentalgerringong.com.au` |
 
-4. Redeploy after adding the variables.
-5. Point your ads at the Vercel URL (or attach a custom domain / subdomain in Vercel > Domains).
+   Fastest option: in Vercel > Environment Variables > **Shared**, promote the
+   five SMTP vars to the team so every project (including this one) inherits
+   them. Then you only add `INTAKE_ADDRESS` and `ALLOWED_ORIGIN` here.
 
-The form posts to `/api/lead` on the same domain, so there is nothing to paste
+   Only `INTAKE_ADDRESS` must differ per client - this one is Seth Dental's.
+
+4. Point your ads at the Vercel URL, or attach a custom domain in Vercel > Domains.
+
+The form posts to `/api/lead` on the same domain, so there's nothing to paste
 into the page and no CORS to configure.
 
-## Get a Resend key (2 minutes)
-1. Sign up at resend.com.
-2. Create an API key, paste it into `RESEND_API_KEY`.
-3. Leave `FROM_EMAIL` as the default to skip DNS entirely. To send from an
-   `@sethdentalgerringong.com.au` address instead, verify the domain in Resend
-   once (a couple of DNS records) and update `FROM_EMAIL`.
-
 ## Test before spending
-Submit the form once and confirm a new lead appears in the Seth Dental SmileOx
-pipeline with every field: name, mobile, email, plus goal, timeframe, payment
-preference and location.
+Submit the form once on the live URL and confirm a new lead appears in the Seth
+Dental SmileOx pipeline with every field: name, mobile, email, goal, timeframe,
+payment preference and location.
 
 ## Notes
 - Opening `index.html` locally (file://) will not submit; the function only runs
-  once deployed. That is expected.
-- Prefer the zero-config layout? Move `lead.js` into an `api/` folder (so it is
-  `api/lead.js`) and delete `vercel.json`. Vercel will wire `/api/lead`
-  automatically. The flat layout here avoids that folder on purpose.
+  once deployed. Expected.
+- Failures are logged in Vercel > Logs, and the page shows a "please try again"
+  message, so nothing fails silently.
+- Prefer Vercel's default layout? Move `lead.js` to `api/lead.js` and delete
+  `vercel.json`. The flat layout avoids that folder on purpose.
 - To auto-advance a lead's SmileOx status instead of creating a duplicate, add
   `action` and `targetStatusId` to the payload in `lead.js` (SmileOx dedupes on
   email + phone).
