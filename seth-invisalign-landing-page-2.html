@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#d95123">
+<title>Invisalign® Smile Event | Seth Dental Gerringong</title>
+<meta name="description" content="For 14 days only, 17 to 30 August, book a free Invisalign consult with Dr Hiral and unlock over $2,000 in inclusions when you proceed. Gerringong, Kiama and Berry.">
+<link href="https://fonts.cdnfonts.com/css/recoleta" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#d95123; --orange-deep:#c4431a; --orange-lt:#f0895f;
+    --ink:#241a15; --ink-soft:#4a3a33; --muted:#8a6f63;
+    --cream:#fbf3ee; --cream2:#f4ebe4; --sand:#fdf1ea;
+    --dark:#2a140c; --white:#fff;
+    --line:#efdccf;
+    --serif:'Recoleta','Times New Roman',Georgia,serif;
+    --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    --topbar:60px; --ctabar:84px;
+    --shadow:0 18px 44px rgba(42,20,12,.18);
+    --glass:rgba(255,255,255,.62);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%;background:var(--cream2);color:var(--ink);
+    font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow:hidden}
+  img{max-width:100%;display:block;border:0}
+  button{font-family:inherit;cursor:pointer}
+  a{color:inherit}
+  ::selection{background:var(--orange);color:#fff}
+
+  /* ---------- Top bar ---------- */
+  .topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar);z-index:40;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:0 16px;padding-top:env(safe-area-inset-top);
+    background:rgba(251,243,238,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(217,81,35,.12)}
+  .topbar .logo img{height:30px;width:auto}
+  .topbar .tb-right{display:flex;align-items:center;gap:9px}
+  .count-chip{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);
+    border-radius:40px;padding:6px 11px;font-size:11px;font-weight:700;color:var(--orange-deep);
+    box-shadow:0 6px 16px rgba(192,64,24,.10)}
+  .count-chip b{font-variant-numeric:tabular-nums;letter-spacing:.3px}
+  .count-chip .dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+  .btn-call{display:inline-flex;align-items:center;gap:6px;background:var(--orange);
+    background-image:linear-gradient(150deg,var(--orange-lt),var(--orange) 60%,var(--orange-deep));
+    color:#fff;border:0;border-radius:40px;padding:9px 14px;font-size:13px;font-weight:700;
+    text-decoration:none;box-shadow:0 8px 18px rgba(192,64,24,.28)}
+
+  /* ---------- Deck ---------- */
+  .deck{display:flex;height:100dvh;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .deck::-webkit-scrollbar{display:none}
+  .panel{position:relative;flex:0 0 100%;width:100vw;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
+    display:flex;flex-direction:column;align-items:center;
+    padding:calc(var(--topbar) + 20px) 20px calc(var(--ctabar) + 14px);
+    overflow-y:auto;scrollbar-width:none}
+  .panel::-webkit-scrollbar{display:none}
+  .inner{width:100%;max-width:540px;margin:auto}
+
+  /* backgrounds */
+  .bg-cream{background:
+    radial-gradient(circle at 12% 0%,rgba(217,81,35,.10),transparent 42%),
+    radial-gradient(circle at 92% 12%,rgba(217,81,35,.08),transparent 46%),
+    linear-gradient(180deg,var(--cream),var(--cream2))}
+  .bg-orange{background:linear-gradient(155deg,var(--orange-lt),var(--orange) 52%,var(--orange-deep));color:#fff}
+  .bg-dark{background:linear-gradient(160deg,#3a1d12,var(--dark) 60%,#1c0d07);color:#fff}
+  .bg-white{background:linear-gradient(180deg,#fff,var(--sand))}
+
+  /* type */
+  .eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;
+    color:var(--orange-deep);margin-bottom:14px}
+  .bg-orange .eyebrow,.bg-dark .eyebrow{color:#ffd9c9}
+  h1,h2{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacing:-.5px;margin:0}
+  h1{font-size:clamp(34px,8.6vw,46px)}
+  h2{font-size:clamp(27px,6.6vw,36px)}
+  .lead{font-size:clamp(15px,4vw,17px);line-height:1.5;color:var(--ink-soft);margin:16px 0 0}
+  .bg-orange .lead,.bg-dark .lead{color:rgba(255,255,255,.92)}
+  .accent{color:var(--orange)}
+  .bg-orange .accent,.bg-dark .accent{color:#ffe0d3}
+  .reg{font-family:var(--sans);font-weight:600;font-size:.5em;vertical-align:super;line-height:0}
+
+  /* pills / chips */
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);
+    border-radius:40px;padding:8px 15px;font-size:12.5px;font-weight:700;color:var(--ink);box-shadow:0 6px 16px rgba(192,64,24,.08)}
+  .pill .d{width:7px;height:7px;border-radius:50%;background:var(--orange)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:20px}
+  .chip{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:40px;padding:8px 13px;
+    font-size:12px;font-weight:600;color:var(--ink-soft)}
+  .bg-orange .chip{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.28);color:#fff}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:50px;
+    padding:16px 26px;font-size:16px;font-weight:800;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease;width:100%}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--orange);background-image:linear-gradient(150deg,var(--orange-lt),var(--orange) 60%,var(--orange-deep));
+    color:#fff;box-shadow:0 14px 30px rgba(192,64,24,.34)}
+  .btn-onwhite{background:#fff;color:var(--orange-deep);box-shadow:0 12px 26px rgba(0,0,0,.14)}
+  .btn-ghost{background:transparent;color:var(--orange-deep);border:1.5px solid rgba(217,81,35,.4);box-shadow:none}
+  .bg-orange .btn-ghost,.bg-dark .btn-ghost{color:#fff;border-color:rgba(255,255,255,.6)}
+  .btn-row{display:flex;flex-direction:column;gap:11px;margin-top:26px}
+  .subnote{font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+  .bg-orange .subnote,.bg-dark .subnote{color:rgba(255,255,255,.8)}
+
+  /* hero image */
+  .hero-photo{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);
+    aspect-ratio:16/12;background:#f7ede6;margin-top:22px}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .price-tag{position:absolute;left:14px;bottom:14px;background:rgba(42,20,12,.72);backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);border-radius:14px;padding:12px 16px;color:#fff}
+  .price-tag b{font-family:var(--serif);font-size:26px;line-height:1}
+  .price-tag span{display:block;font-size:11px;opacity:.85;margin-top:3px;letter-spacing:.4px}
+
+  /* offer list card */
+  .card{background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.7);border-radius:20px;box-shadow:var(--shadow);padding:8px 20px;margin-top:22px}
+  .bg-orange .card{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.26)}
+  .irow{display:flex;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
+  .bg-orange .irow{border-color:rgba(255,255,255,.22)}
+  .irow:last-child{border-bottom:0}
+  .irow .tick{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+  .bg-orange .irow .tick{background:#fff;color:var(--orange)}
+  .irow .lbl{flex:1;font-size:14.5px;font-weight:600;text-align:left}
+  .irow .val{font-weight:800;color:var(--orange);white-space:nowrap}
+  .bg-orange .irow .val{color:#fff}
+  .total{display:flex;align-items:center;justify-content:space-between;background:var(--orange);
+    background-image:linear-gradient(150deg,var(--orange-lt),var(--orange) 60%,var(--orange-deep));
+    color:#fff;border-radius:14px;padding:14px 18px;margin-top:14px}
+  .total b{font-family:var(--serif);font-size:24px}
+  .bg-orange .total{background:#fff;color:var(--orange-deep)}
+  .bg-orange .total b{color:var(--orange-deep)}
+
+  /* countdown big */
+  .cd{display:flex;gap:10px;justify-content:center;margin-top:24px}
+  .cd .u{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+    padding:14px 6px;min-width:70px;text-align:center}
+  .cd .u b{display:block;font-family:var(--serif);font-size:32px;line-height:1;font-variant-numeric:tabular-nums}
+  .cd .u span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.85;margin-top:6px;display:block}
+
+  /* trust grid */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+  .tcell{background:var(--glass);border:1px solid rgba(255,255,255,.7);border-radius:16px;padding:16px 15px;text-align:left;
+    box-shadow:0 10px 24px rgba(192,64,24,.08)}
+  .tcell .ic{font-size:20px;margin-bottom:8px;display:block}
+  .tcell h3{margin:0 0 4px;font-size:14.5px;font-family:var(--sans);font-weight:800}
+  .tcell p{margin:0;font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+
+  /* steps */
+  .steps{display:flex;flex-direction:column;gap:14px;margin-top:22px;text-align:left}
+  .step{display:flex;gap:14px;align-items:flex-start;background:var(--glass);border:1px solid rgba(255,255,255,.7);
+    border-radius:16px;padding:16px;box-shadow:0 10px 24px rgba(192,64,24,.08)}
+  .step .n{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--serif);font-size:17px}
+  .step h3{margin:0 0 3px;font-size:15px;font-weight:800}
+  .step p{margin:0;font-size:13px;line-height:1.45;color:var(--ink-soft)}
+
+  /* dentist */
+  .doc{display:flex;gap:16px;align-items:center;background:var(--glass);border:1px solid rgba(255,255,255,.7);
+    border-radius:20px;padding:16px;box-shadow:var(--shadow);margin-top:22px;text-align:left}
+  .doc img{flex:0 0 96px;width:96px;height:112px;object-fit:cover;object-position:top;border-radius:14px;background:var(--sand)}
+  .doc .role{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange-deep)}
+  .doc h3{margin:2px 0 6px;font-family:var(--serif);font-size:21px;color:var(--orange)}
+  .doc p{margin:0;font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+  .cred{margin-top:14px;font-size:12px;color:var(--muted);text-align:center}
+
+  /* quiz */
+  .quiz{width:100%;max-width:500px;margin:auto;text-align:center}
+  .qhead{margin-bottom:18px}
+  .qbar{height:6px;background:var(--line);border-radius:40px;overflow:hidden;margin:16px auto 22px;max-width:280px}
+  .qbar i{display:block;height:100%;width:20%;background:linear-gradient(90deg,var(--orange-lt),var(--orange));
+    border-radius:40px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+  .qstep{display:none}
+  .qstep.on{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .qopts{display:flex;flex-direction:column;gap:11px;margin-top:6px}
+  .qopt{display:flex;align-items:center;gap:12px;text-align:left;background:#fff;border:1.5px solid var(--line);
+    border-radius:16px;padding:16px 18px;font-size:15px;font-weight:600;color:var(--ink);transition:.15s;width:100%}
+  .qopt:hover{border-color:var(--orange);box-shadow:0 8px 20px rgba(192,64,24,.12)}
+  .qopt .k{flex:0 0 24px;width:24px;height:24px;border-radius:50%;border:2px solid var(--line);transition:.15s}
+  .qopt:hover .k{border-color:var(--orange)}
+  .qform{display:flex;flex-direction:column;gap:11px;margin-top:6px;text-align:left}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:5px}
+  .field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:14px 14px;
+    font-size:15px;font-family:inherit;background:#fff;color:var(--ink);-webkit-appearance:none;appearance:none}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(217,81,35,.14)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .consent{display:flex;gap:9px;align-items:flex-start;font-size:11.5px;color:var(--muted);line-height:1.45;text-align:left}
+  .consent input{margin-top:2px}
+  .qback{background:none;border:0;color:var(--muted);font-size:13px;font-weight:700;margin-top:14px}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+  .qdone{display:none;text-align:center}
+  .qdone.on{display:block;animation:fade .4s ease}
+  .qdone .big{width:64px;height:64px;border-radius:50%;background:var(--orange);color:#fff;display:flex;
+    align-items:center;justify-content:center;font-size:30px;margin:0 auto 16px;box-shadow:0 12px 28px rgba(192,64,24,.34)}
+
+  /* location */
+  .mapwrap{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin-top:20px;border:1px solid var(--line)}
+  .mapwrap iframe{width:100%;height:210px;border:0;display:block;filter:saturate(.9)}
+  .locrow{display:flex;gap:12px;align-items:flex-start;text-align:left;margin-top:16px;font-size:14px;color:var(--ink-soft)}
+  .locrow .ic{flex:0 0 22px;color:var(--orange);font-size:17px}
+  .locrow b{color:var(--ink)}
+
+  /* faq */
+  .faq{margin-top:20px;text-align:left}
+  .faq details{background:var(--glass);border:1px solid rgba(255,255,255,.7);border-radius:14px;margin-bottom:10px;
+    padding:0 16px;box-shadow:0 8px 20px rgba(192,64,24,.06)}
+  .faq summary{list-style:none;cursor:pointer;padding:15px 0;font-size:14.5px;font-weight:700;display:flex;
+    justify-content:space-between;align-items:center;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--sand);color:var(--orange);
+    display:flex;align-items:center;justify-content:center;font-weight:800;transition:.2s}
+  .faq details[open] summary .plus{transform:rotate(45deg);background:var(--orange);color:#fff}
+  .faq p{margin:0 0 15px;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+
+  /* compliance / footer */
+  .fine{font-size:11px;line-height:1.55;color:rgba(255,255,255,.72);margin-top:22px;max-width:460px}
+  .foot-meta{font-size:12px;color:rgba(255,255,255,.8);margin-top:16px;line-height:1.7}
+  .foot-meta a{color:#fff;font-weight:700;text-decoration:none}
+
+  /* progress rail + arrows */
+  .rail{position:fixed;left:0;right:0;bottom:calc(var(--ctabar) - 2px);z-index:35;display:flex;justify-content:center;gap:7px;
+    pointer-events:none;padding-bottom:6px}
+  .rail button{pointer-events:auto;width:9px;height:9px;border-radius:50%;border:0;background:rgba(42,20,12,.2);padding:0;transition:.25s}
+  .rail button.act{width:26px;border-radius:40px;background:var(--orange)}
+  .arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:36;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border:1px solid var(--line);box-shadow:var(--shadow);
+    display:none;align-items:center;justify-content:center;color:var(--orange-deep);font-size:20px}
+  .arrow.prev{left:16px}.arrow.next{right:16px}
+  .arrow:disabled{opacity:.35;pointer-events:none}
+
+  /* bottom CTA bar */
+  .ctabar{position:fixed;left:0;right:0;bottom:0;z-index:40;height:var(--ctabar);
+    display:flex;align-items:center;gap:10px;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));
+    background:rgba(251,243,238,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid rgba(217,81,35,.14)}
+  .ctabar .cta-main{flex:1;background:var(--orange);background-image:linear-gradient(150deg,var(--orange-lt),var(--orange) 60%,var(--orange-deep));
+    color:#fff;border:0;border-radius:40px;padding:15px 16px;font-size:15px;font-weight:800;box-shadow:0 12px 26px rgba(192,64,24,.3);
+    display:flex;flex-direction:column;align-items:center;line-height:1.15}
+  .ctabar .cta-main small{font-size:10.5px;font-weight:600;opacity:.9}
+  .ctabar .cta-phone{flex:0 0 52px;width:52px;height:52px;border-radius:50%;background:#fff;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--orange-deep);font-size:22px;text-decoration:none;box-shadow:0 8px 18px rgba(0,0,0,.1)}
+
+  .swipe-hint{position:absolute;bottom:calc(var(--ctabar) + 18px);left:50%;transform:translateX(-50%);
+    font-size:11.5px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;
+    display:flex;align-items:center;gap:8px;animation:nudge 1.8s ease-in-out infinite}
+  .bg-orange .swipe-hint{color:rgba(255,255,255,.85)}
+  @keyframes nudge{0%,100%{transform:translateX(-50%)}50%{transform:translateX(calc(-50% + 8px))}}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .panel.active .rv{opacity:1;transform:none}
+  .panel.active .rv:nth-child(2){transition-delay:.06s}
+  .panel.active .rv:nth-child(3){transition-delay:.12s}
+  .panel.active .rv:nth-child(4){transition-delay:.18s}
+
+  /* desktop */
+  @media(min-width:900px){
+    .inner{max-width:600px}
+    .arrow{display:flex}
+    .ctabar{justify-content:center}
+    .ctabar .cta-main{flex:0 0 auto;min-width:340px;flex-direction:row;gap:8px}
+    .hero-photo{aspect-ratio:16/10}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <span class="logo" aria-label="Seth Dental Gerringong">
+    <img src="https://i.imgur.com/QX7m3xT.png" alt="Seth Dental Gerringong">
+  </span>
+  <div class="tb-right">
+    <div class="count-chip" aria-label="Offer ends soon"><span class="dot"></span>Ends in <b id="cdMini">--</b></div>
+    <button class="btn-call" data-goquiz>Enquire</button>
+  </div>
+</header>
+
+<!-- ===== DECK ===== -->
+<main class="deck" id="deck">
+
+  <!-- 0 HERO -->
+  <section class="panel bg-cream active" data-name="Offer">
+    <div class="inner">
+      <span class="eyebrow rv">Invisalign<span class="reg">&reg;</span> Smile Event &middot; Gerringong</span>
+      <h1 class="rv">Straighten your smile with <span class="accent">$2,000 in inclusions</span></h1>
+      <p class="lead rv">For 14 days only, 17&ndash;30 August, book a free Invisalign<span class="reg">&reg;</span> consult with Dr Hiral and unlock over $2,000 in inclusions when you proceed.</p>
+      <div class="hero-photo rv">
+        <img src="https://i.imgur.com/odPWQOR.jpeg" alt="Patient considering Invisalign clear aligners" loading="eager">
+        <div class="price-tag"><b>$2,000</b><span>in inclusions when you proceed</span></div>
+      </div>
+      <div class="btn-row rv">
+        <button class="btn btn-primary" data-goquiz>Check if you qualify</button>
+      </div>
+      <p class="subnote rv">Free 30-minute consult &middot; Smile simulation on the day &middot; $50 fully refundable deposit</p>
+    </div>
+    <div class="swipe-hint">Swipe to explore &rarr;</div>
+  </section>
+
+  <!-- 1 INCLUSIONS -->
+  <section class="panel bg-white" data-name="Inclusions">
+    <div class="inner">
+      <span class="eyebrow rv">The offer</span>
+      <h2 class="rv">Over $2,000 in inclusions</h2>
+      <p class="lead rv">All four apply when you proceed with treatment during the event.</p>
+      <div class="card rv">
+        <div class="irow"><span class="tick">&#10003;</span><span class="lbl">Digital scan + smile assessment</span><span class="val">$500</span></div>
+        <div class="irow"><span class="tick">&#10003;</span><span class="lbl">Custom take-home whitening kit</span><span class="val">$450</span></div>
+        <div class="irow"><span class="tick">&#10003;</span><span class="lbl">Retainers after treatment</span><span class="val">$550</span></div>
+        <div class="irow"><span class="tick">&#10003;</span><span class="lbl">Seth Dental practice discount</span><span class="val">$500</span></div>
+      </div>
+      <div class="total rv"><span>Total value when you proceed</span><b>$2,000</b></div>
+      <div class="btn-row rv"><button class="btn btn-primary" data-goquiz>Claim my inclusions</button></div>
+    </div>
+  </section>
+
+  <!-- 2 LIMITED TIME -->
+  <section class="panel bg-orange" data-name="14 days">
+    <div class="inner" style="text-align:center">
+      <span class="eyebrow rv">Limited time</span>
+      <h2 class="rv">14 days. Then it&rsquo;s gone.</h2>
+      <p class="lead rv">The Smile Event runs 17 to 30 August 2026. Appointments are by appointment only and slots are strictly limited.</p>
+      <div class="cd rv" id="cdBig" aria-label="Countdown to offer end">
+        <div class="u"><b id="cdD">--</b><span>Days</span></div>
+        <div class="u"><b id="cdH">--</b><span>Hrs</span></div>
+        <div class="u"><b id="cdM">--</b><span>Min</span></div>
+        <div class="u"><b id="cdS">--</b><span>Sec</span></div>
+      </div>
+      <div class="chips rv">
+        <span class="chip">Gerringong</span><span class="chip">Kiama</span><span class="chip">Berry</span>
+      </div>
+      <div class="btn-row rv"><button class="btn btn-onwhite" data-goquiz>Secure my spot</button></div>
+    </div>
+  </section>
+
+  <!-- 3 DENTIST -->
+  <section class="panel bg-cream" data-name="Your dentist">
+    <div class="inner">
+      <span class="eyebrow rv">Meet your dentist</span>
+      <h2 class="rv">Care from an experienced local team</h2>
+      <div class="doc rv">
+        <!-- Headshots load from the practice site (same-origin on the live domain). If hosting the LP elsewhere, re-host these on imgur like the logo. -->
+        <img src="https://sethdentalgerringong.com.au/wp-content/uploads/2025/01/753-778-1.png" alt="Dr Hiral Seth">
+        <div>
+          <div class="role">Leading the event</div>
+          <h3>Dr Hiral Seth</h3>
+          <p>Dr Hiral runs the Invisalign<span class="reg">&reg;</span> Smile Event with a gentle, patient-first approach that makes every visit calm and comfortable.</p>
+        </div>
+      </div>
+      <div class="doc rv">
+        <img src="https://sethdentalgerringong.com.au/wp-content/uploads/2025/01/753-778-2.png" alt="Dr Abhishek Seth">
+        <div>
+          <div class="role">Alongside</div>
+          <h3>Dr Abhishek Seth</h3>
+          <p>Together, the husband-and-wife team brings over a decade of experience caring for Australian smiles across general, cosmetic and surgical dentistry.</p>
+        </div>
+      </div>
+      <p class="cred rv">Provider: Dr Hiral Seth &middot; AHPRA DEN0002248853</p>
+      <div class="btn-row rv"><button class="btn btn-primary" data-goquiz>Check if you qualify</button></div>
+    </div>
+  </section>
+
+  <!-- 4 HOW IT WORKS -->
+  <section class="panel bg-white" data-name="How it works">
+    <div class="inner">
+      <span class="eyebrow rv">How it works</span>
+      <h2 class="rv">Three simple steps</h2>
+      <div class="steps">
+        <div class="step rv"><span class="n">1</span><div><h3>Book your free consult</h3><p>Hold your 30-minute appointment with a $50 deposit, fully refundable or redeemed against treatment.</p></div></div>
+        <div class="step rv"><span class="n">2</span><div><h3>See your smile simulation</h3><p>On the day, preview a simulation of your smile and get every question answered. No pressure, no obligation.</p></div></div>
+        <div class="step rv"><span class="n">3</span><div><h3>Start during the event</h3><p>If Invisalign<span class="reg">&reg;</span> is right for you, proceed during the event and unlock your $2,000 in inclusions.</p></div></div>
+      </div>
+      <div class="btn-row rv"><button class="btn btn-primary" data-goquiz>Start now</button></div>
+    </div>
+  </section>
+
+  <!-- 5 WHY US -->
+  <section class="panel bg-cream" data-name="Why us">
+    <div class="inner">
+      <span class="eyebrow rv">Why Seth Dental</span>
+      <h2 class="rv">Reasons to feel confident</h2>
+      <div class="grid">
+        <div class="tcell rv"><span class="ic">&#128205;</span><h3>Local to Gerringong</h3><p>Caring for patients across Gerringong, Kiama and Berry.</p></div>
+        <div class="tcell rv"><span class="ic">&#128100;</span><h3>Experienced team</h3><p>Over a decade caring for Australian smiles.</p></div>
+        <div class="tcell rv"><span class="ic">&#129681;</span><h3>Gentle care</h3><p>A calm, patient-first approach at every visit.</p></div>
+        <div class="tcell rv"><span class="ic">&#128241;</span><h3>Modern tech</h3><p>Digital scanning and a same-day smile simulation.</p></div>
+        <div class="tcell rv"><span class="ic">&#128181;</span><h3>Flexible payments</h3><p>Ask about payment options at your consult.</p></div>
+        <div class="tcell rv"><span class="ic">&#128274;</span><h3>Risk-free start</h3><p>Free consult and a fully refundable $50 deposit.</p></div>
+      </div>
+      <div class="btn-row rv"><button class="btn btn-primary" data-goquiz>Check if you qualify</button></div>
+    </div>
+  </section>
+
+  <!-- 6 QUIZ -->
+  <section class="panel bg-white" data-name="Qualify" id="quizPanel">
+    <div class="quiz">
+      <div class="qhead">
+        <span class="eyebrow">30-second check</span>
+        <h2>See if Invisalign<span class="reg">&reg;</span> is right for you</h2>
+        <div class="qbar"><i id="qFill"></i></div>
+      </div>
+
+      <form id="quizForm" novalidate>
+        <!-- honeypot -->
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="treatment_type" value="Invisalign">
+        <input type="hidden" name="goal" id="fGoal">
+        <input type="hidden" name="timeframe" id="fTime">
+        <input type="hidden" name="payment_method" id="fPay">
+
+        <!-- Q1 -->
+        <div class="qstep on" data-step="1">
+          <p class="lead" style="margin:0 0 16px">What would you most like to improve?</p>
+          <div class="qopts">
+            <button type="button" class="qopt" data-q="goal" data-v="Crowded or crooked teeth"><span class="k"></span>Crowded or crooked teeth</button>
+            <button type="button" class="qopt" data-q="goal" data-v="Gaps between teeth"><span class="k"></span>Gaps between teeth</button>
+            <button type="button" class="qopt" data-q="goal" data-v="Bite or alignment"><span class="k"></span>Bite or alignment</button>
+            <button type="button" class="qopt" data-q="goal" data-v="Just exploring options"><span class="k"></span>Just exploring options</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qstep" data-step="2">
+          <p class="lead" style="margin:0 0 16px">When are you hoping to start?</p>
+          <div class="qopts">
+            <button type="button" class="qopt" data-q="time" data-v="As soon as possible"><span class="k"></span>As soon as possible</button>
+            <button type="button" class="qopt" data-q="time" data-v="In the next few months"><span class="k"></span>In the next few months</button>
+            <button type="button" class="qopt" data-q="time" data-v="Just researching for now"><span class="k"></span>Just researching for now</button>
+          </div>
+          <button type="button" class="qback" data-back>&larr; Back</button>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qstep" data-step="3">
+          <p class="lead" style="margin:0 0 16px">How would you prefer to pay?</p>
+          <div class="qopts">
+            <button type="button" class="qopt" data-q="pay" data-v="Payment plan"><span class="k"></span>A payment plan</button>
+            <button type="button" class="qopt" data-q="pay" data-v="Pay upfront"><span class="k"></span>Pay upfront</button>
+            <button type="button" class="qopt" data-q="pay" data-v="Not sure yet"><span class="k"></span>Not sure yet</button>
+          </div>
+          <button type="button" class="qback" data-back>&larr; Back</button>
+        </div>
+
+        <!-- Q4 CONTACT -->
+        <div class="qstep" data-step="4">
+          <p class="lead" style="margin:0 0 16px">Great news, you&rsquo;re a good fit to book. Where can we send your confirmation?</p>
+          <div class="qform">
+            <div class="two">
+              <div class="field"><label for="fn">First name</label><input id="fn" name="first_name" type="text" autocomplete="given-name" required></div>
+              <div class="field"><label for="ln">Last name</label><input id="ln" name="last_name" type="text" autocomplete="family-name"></div>
+            </div>
+            <div class="field"><label for="ph">Mobile</label><input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="04__ ___ ___" required></div>
+            <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required></div>
+            <div class="field"><label for="loc">Preferred location</label>
+              <select id="loc" name="location"><option>Gerringong</option><option>Kiama</option><option>Berry</option></select>
+            </div>
+            <label class="consent"><input type="checkbox" id="cons" required>I agree to be contacted by Seth Dental Gerringong about my enquiry.</label>
+            <p id="qErr" style="display:none;color:#c4431a;font-size:12.5px;font-weight:700;margin:0">Something went wrong. Please try again, or check back shortly.</p>
+            <button type="submit" class="btn btn-primary" style="margin-top:6px">Claim my $2,000 in inclusions</button>
+            <button type="button" class="qback" data-back>&larr; Back</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- DONE -->
+      <div class="qdone" id="qDone">
+        <div class="big">&#10003;</div>
+        <h2 id="doneName">You&rsquo;re in!</h2>
+        <p class="lead">Your details are with our team. We&rsquo;ll be in touch shortly to confirm your free Invisalign<span class="reg">&reg;</span> consult and your $2,000 in inclusions. Keep an eye on your phone and email.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 LOCATION -->
+  <section class="panel bg-cream" data-name="Find us">
+    <div class="inner">
+      <span class="eyebrow rv">Find us</span>
+      <h2 class="rv">Right here in Gerringong</h2>
+      <div class="mapwrap rv">
+        <iframe title="Seth Dental Gerringong location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Unit%203/11%20Blackwood%20St%20Gerringong%20NSW%202534&output=embed"></iframe>
+      </div>
+      <div class="locrow rv"><span class="ic">&#128205;</span><div><b>Unit 3/11 Blackwood St</b><br>Gerringong NSW 2534</div></div>
+      <div class="locrow rv"><span class="ic">&#128337;</span><div>Open Monday to Friday, with Saturday appointments available during the event.</div></div>
+      <div class="btn-row rv"><button class="btn btn-primary" data-goquiz>Check if you qualify</button></div>
+    </div>
+  </section>
+
+  <!-- 8 FAQ -->
+  <section class="panel bg-white" data-name="FAQ">
+    <div class="inner">
+      <span class="eyebrow rv">Good to know</span>
+      <h2 class="rv">Your questions, answered</h2>
+      <div class="faq rv">
+        <details><summary>How much does Invisalign<span class="reg">&reg;</span> cost?<span class="plus">+</span></summary><p>It depends on your individual needs. You will receive a personalised quote after your consultation and assessment, and can ask about payment options on the day.</p></details>
+        <details><summary>How long does treatment take?<span class="plus">+</span></summary><p>Treatment usually takes 4 to 18 months depending on your individual case. Your dentist will discuss expected timeframes at your consult. Individual results vary.</p></details>
+        <details><summary>Is the consult really free?<span class="plus">+</span></summary><p>Yes. Your 30-minute Invisalign<span class="reg">&reg;</span> consult is free. A $50 deposit holds your appointment and is fully refundable, or redeemed against treatment if you proceed.</p></details>
+        <details><summary>What&rsquo;s included in the $2,000?<span class="plus">+</span></summary><p>Digital scan and smile assessment ($500), custom take-home whitening kit ($450), retainers after treatment ($550) and a Seth Dental practice discount ($500), applied when you proceed.</p></details>
+        <details><summary>Am I suitable for Invisalign<span class="reg">&reg;</span>?<span class="plus">+</span></summary><p>Suitability depends on your individual circumstances and is assessed by your dentist at your consultation. Take the 30-second check to get started.</p></details>
+      </div>
+      <div class="btn-row rv"><button class="btn btn-primary" data-goquiz>Check if you qualify</button></div>
+    </div>
+  </section>
+
+  <!-- 9 FINAL -->
+  <section class="panel bg-dark" data-name="Book">
+    <div class="inner" style="text-align:center">
+      <span class="eyebrow rv">Your smile, sorted</span>
+      <h2 class="rv">Ready to get started?</h2>
+      <p class="lead rv">Book your free Invisalign<span class="reg">&reg;</span> consult with Dr Hiral before the event closes on 30 August and unlock over $2,000 in inclusions.</p>
+      <div class="btn-row rv">
+        <button class="btn btn-primary" data-goquiz>Check if you qualify</button>
+      </div>
+      <p class="fine rv">Provider: Dr Hiral Seth, DEN0002248853. Risks apply. Treatment 4 to 18 months. Individual results vary. Invisalign is a registered trademark of Align Technology. Not sponsored by Align Technology. A $50 fully refundable deposit secures your appointment.</p>
+      <p class="foot-meta rv">Seth Dental Gerringong &middot; Unit 3/11 Blackwood St, Gerringong NSW 2534<br>&copy; 2026 Seth Dental Gerringong</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- progress rail + arrows + cta bar -->
+<div class="rail" id="rail" aria-hidden="true"></div>
+<button class="arrow prev" id="arrPrev" aria-label="Previous">&#8249;</button>
+<button class="arrow next" id="arrNext" aria-label="Next">&#8250;</button>
+
+<div class="ctabar">
+  <button class="cta-main" data-goquiz>Claim your $2,000 in inclusions<small>Free consult &middot; $50 fully refundable</small></button>
+</div>
+
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var panels=Array.prototype.slice.call(deck.querySelectorAll('.panel'));
+  var rail=document.getElementById('rail');
+  var arrPrev=document.getElementById('arrPrev'), arrNext=document.getElementById('arrNext');
+  var quizIndex=panels.findIndex(function(p){return p.id==='quizPanel';});
+  var current=0;
+
+  // build rail dots
+  panels.forEach(function(p,i){
+    var b=document.createElement('button');
+    b.setAttribute('aria-label','Go to '+(p.dataset.name||('section '+(i+1))));
+    b.addEventListener('click',function(){goTo(i);});
+    rail.appendChild(b);
+  });
+  var dots=Array.prototype.slice.call(rail.children);
+
+  function goTo(i){
+    i=Math.max(0,Math.min(panels.length-1,i));
+    deck.scrollTo({left:i*deck.clientWidth,behavior:'smooth'});
+  }
+  function setActive(i){
+    if(i===current) { } 
+    current=i;
+    panels.forEach(function(p,idx){p.classList.toggle('active',idx===i);});
+    dots.forEach(function(d,idx){d.classList.toggle('act',idx===i);});
+    arrPrev.disabled=(i===0); arrNext.disabled=(i===panels.length-1);
+  }
+
+  // track active panel on scroll
+  var raf;
+  deck.addEventListener('scroll',function(){
+    if(raf) return;
+    raf=requestAnimationFrame(function(){
+      raf=null;
+      var i=Math.round(deck.scrollLeft/deck.clientWidth);
+      if(i!==current) setActive(i);
+    });
+  },{passive:true});
+
+  arrPrev.addEventListener('click',function(){goTo(current-1);});
+  arrNext.addEventListener('click',function(){goTo(current+1);});
+
+  // keyboard
+  document.addEventListener('keydown',function(e){
+    if(e.target.matches('input,select,textarea,button')) return;
+    if(e.key==='ArrowRight'){goTo(current+1);}
+    if(e.key==='ArrowLeft'){goTo(current-1);}
+  });
+
+  // wheel -> horizontal (desktop), but let a panel scroll vertically first
+  deck.addEventListener('wheel',function(e){
+    if(Math.abs(e.deltaY)<Math.abs(e.deltaX)) return; // real horizontal intent
+    var p=e.target.closest('.panel');
+    if(p){
+      var atTop=p.scrollTop<=0, atBot=p.scrollTop+p.clientHeight>=p.scrollHeight-1;
+      var needsV=p.scrollHeight>p.clientHeight+2;
+      if(needsV && !((e.deltaY<0&&atTop)||(e.deltaY>0&&atBot))) return;
+    }
+    e.preventDefault();
+    deck.scrollLeft+=e.deltaY;
+  },{passive:false});
+
+  // CTA -> quiz
+  Array.prototype.slice.call(document.querySelectorAll('[data-goquiz]')).forEach(function(b){
+    b.addEventListener('click',function(){goTo(quizIndex);});
+  });
+
+  // recompute on resize (clientWidth changes)
+  var rt;
+  window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){deck.scrollLeft=current*deck.clientWidth;},120);});
+
+  setActive(0);
+
+  /* ---------- QUIZ ---------- */
+  var form=document.getElementById('quizForm');
+  var steps=Array.prototype.slice.call(form.querySelectorAll('.qstep'));
+  var fill=document.getElementById('qFill');
+  var stepNo=1, TOTAL=4;
+  function showStep(n){
+    stepNo=n;
+    steps.forEach(function(s){s.classList.toggle('on',+s.dataset.step===n);});
+    fill.style.width=(n/TOTAL*100)+'%';
+    var panel=document.getElementById('quizPanel');
+    if(panel) panel.scrollTop=0;
+  }
+  fill.style.width=(1/TOTAL*100)+'%';
+
+  form.querySelectorAll('.qopt').forEach(function(opt){
+    opt.addEventListener('click',function(){
+      var q=opt.dataset.q, v=opt.dataset.v;
+      if(q==='goal') document.getElementById('fGoal').value=v;
+      if(q==='time') document.getElementById('fTime').value=v;
+      if(q==='pay')  document.getElementById('fPay').value=v;
+      // mark selection briefly
+      var sibs=opt.parentNode.querySelectorAll('.qopt .k');
+      sibs.forEach(function(k){k.style.background='transparent';k.style.borderColor='';});
+      opt.querySelector('.k').style.background='var(--orange)';
+      opt.querySelector('.k').style.borderColor='var(--orange)';
+      setTimeout(function(){ showStep(Math.min(stepNo+1,TOTAL)); },160);
+    });
+  });
+  form.querySelectorAll('[data-back]').forEach(function(b){
+    b.addEventListener('click',function(){showStep(Math.max(stepNo-1,1));});
+  });
+
+  /* ============================================================
+     SmileOx intake: this form POSTs a JSON payload to your own
+     endpoint (a small serverless function), which then emails the
+     SmileOx intake address. See smileox-lead-api.js for that function.
+     Set LEAD_ENDPOINT to your deployed function URL, e.g.
+       https://your-project.vercel.app/api/lead
+     Until it is set, the form still confirms and logs the payload.
+     ============================================================ */
+  var LEAD_ENDPOINT = 'REPLACE_WITH_YOUR_ENDPOINT';
+
+  function normAUPhone(v){
+    var d=(v||'').replace(/[^0-9+]/g,'');
+    if(d.charAt(0)==='+') return d;
+    if(d.charAt(0)==='0') return '+61'+d.slice(1);
+    if(d.slice(0,2)==='61') return '+'+d;
+    return d;
+  }
+  function showDone(name){
+    document.getElementById('doneName').textContent = name ? ('Thanks, '+name+'!') : "You're in!";
+    form.style.display='none';
+    document.getElementById('qDone').classList.add('on');
+    var qb=document.querySelector('#quizPanel .qbar'); if(qb) qb.style.display='none';
+    var panel=document.getElementById('quizPanel'); if(panel) panel.scrollTop=0;
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(form.company.value){return;} // honeypot
+    if(!form.first_name.value || !form.phone.value || !form.email.value || !form.cons.checked){
+      form.reportValidity && form.reportValidity(); return;
+    }
+    var btn=form.querySelector('button[type="submit"]');
+    var errEl=document.getElementById('qErr'); if(errEl) errEl.style.display='none';
+    var payload={
+      firstName:(form.first_name.value||'').trim(),
+      lastName:(form.last_name.value||'').trim(),
+      email:(form.email.value||'').trim(),
+      phoneNumber:normAUPhone(form.phone.value),
+      treatmentType:'Invisalign',
+      goal:document.getElementById('fGoal').value||'',
+      timeframe:document.getElementById('fTime').value||'',
+      paymentMethod:document.getElementById('fPay').value||'',
+      preferredLocation:form.location.value||'',
+      source:'Invisalign Smile Event Landing Page'
+    };
+    var name=payload.firstName;
+    if(!LEAD_ENDPOINT || LEAD_ENDPOINT==='REPLACE_WITH_YOUR_ENDPOINT'){
+      console.log('Lead payload (set LEAD_ENDPOINT to send to SmileOx):',payload);
+      showDone(name); return;
+    }
+    if(btn){btn.disabled=true;btn.textContent='Sending...';}
+    fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){ if(!r.ok) throw new Error('bad status'); return r.json().catch(function(){return {};}); })
+      .then(function(){ showDone(name); })
+      .catch(function(){
+        if(btn){btn.disabled=false;btn.textContent='Claim my $2,000 in inclusions';}
+        if(errEl) errEl.style.display='block';
+      });
+  });
+
+  /* ---------- COUNTDOWN ---------- */
+  var END=new Date('2026-08-30T23:59:59+10:00').getTime();
+  var elD=document.getElementById('cdD'),elH=document.getElementById('cdH'),elM=document.getElementById('cdM'),elS=document.getElementById('cdS'),elMini=document.getElementById('cdMini');
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var t=END-Date.now();
+    if(t<=0){
+      elD&&(elD.textContent='0');elH&&(elH.textContent='00');elM&&(elM.textContent='00');elS&&(elS.textContent='00');
+      elMini&&(elMini.textContent='Final hours');return;
+    }
+    var d=Math.floor(t/86400000), h=Math.floor(t%86400000/3600000), m=Math.floor(t%3600000/60000), s=Math.floor(t%60000/1000);
+    elD&&(elD.textContent=d);elH&&(elH.textContent=pad(h));elM&&(elM.textContent=pad(m));elS&&(elS.textContent=pad(s));
+    elMini&&(elMini.textContent=d+'d '+pad(h)+'h');
+  }
+  tick(); setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
