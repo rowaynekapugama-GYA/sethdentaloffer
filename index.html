@@ -460,8 +460,8 @@
             </div>
             <div class="field"><label for="ph">Mobile</label><input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="04__ ___ ___" required></div>
             <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required></div>
-            <div class="field"><label for="loc">Preferred location</label>
-              <select id="loc" name="location"><option>Gerringong</option><option>Kiama</option><option>Berry</option></select>
+            <div class="field"><label for="pc">Postcode</label>
+              <input id="pc" name="postcode" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="postal-code" placeholder="2534" required></div>
             </div>
             <label class="consent"><input type="checkbox" id="cons" required>I agree to be contacted by Seth Dental Gerringong about my enquiry.</label>
             <p id="qErr" style="display:none;color:#c4431a;font-size:12.5px;font-weight:700;margin:0">Something went wrong. Please try again, or check back shortly.</p>
@@ -685,7 +685,7 @@
       goal:document.getElementById('fGoal').value||'',
       timeframe:document.getElementById('fTime').value||'',
       paymentMethod:document.getElementById('fPay').value||'',
-      preferredLocation:form.location.value||'',
+      postcode:(form.postcode.value||'').trim(),
       source:'Invisalign Smile Event Landing Page'
     };
     var name=payload.firstName;
