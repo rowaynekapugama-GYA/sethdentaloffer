@@ -2,10 +2,12 @@
   "version": 2,
   "builds": [
     { "src": "lead.js", "use": "@vercel/node" },
-    { "src": "index.html", "use": "@vercel/static" }
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "*.png", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/lead", "methods": ["POST", "OPTIONS"], "dest": "/lead.js" },
+    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

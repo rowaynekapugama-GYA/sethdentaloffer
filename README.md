@@ -1,24 +1,30 @@
 # Seth Dental Gerringong - Invisalign Smile Event landing page
 
-Self-contained: the landing page and the lead relay deploy together on Vercel.
-Nothing here touches any other project or the domain's DNS.
+Self-contained: the landing page and the SmileOx lead relay deploy together on
+Vercel. The form posts to /api/lead on its own domain (no CORS to configure),
+and lead.js forwards each lead to the SmileOx intake via the SMTP2GO API.
 
-## The only thing you must set
-- `RESEND_API_KEY`  -> your Resend key (starts with re_...)
+## What to set (Vercel > Settings > Environment Variables)
+- SMTP2GO_API_KEY  -> your SMTP2GO key (starts with api-...). Keep secret.
+- SENDER_EMAIL     -> a sender VERIFIED in your SMTP2GO account
+                      (e.g. no-reply@sethdentalgerringong.com.au)
+- INTAKE_ADDRESS   -> seth-dental-invisalign+c3bf8524-ef4e-42a6-ad9b-481cab01dc28@intake.smileox.com.au
+                      (already defaulted in lead.js; set it to be explicit)
+- ALLOWED_ORIGIN   -> this page's URL (e.g. https://sethdentaloffer.vercel.app)
 
-That's it. The SmileOx intake address is already baked into `lead.js`, and the
-page posts to `/api/lead` on its own domain (no CORS, nothing to paste).
+Then Redeploy (env vars only apply to builds created after they're added).
 
 ## Steps
-1. New GitHub repo, upload these files to the root (no folders).
-2. Vercel > Add New > Project > import the repo > preset "Other" > Deploy.
-3. Project > Settings > Environment Variables > add `RESEND_API_KEY` = your key. Save.
-4. Deployments > latest > Redeploy (so the key is picked up).
-5. Open the deployment URL, submit a test lead, confirm it appears in SmileOx.
-6. Run your ads to that Vercel URL (or attach a subdomain later in Vercel > Domains).
+1. Upload these files to the GitHub repo root (no folders).
+2. In SMTP2GO, make sure SENDER_EMAIL is a verified sender (Sender Domains /
+   Verified Senders). If the domain isn't verified yet, verify it once.
+3. Add the env vars above in Vercel, then Redeploy.
+4. Submit a test lead on the live URL and confirm it appears in SmileOx.
+   You can also see the send under SMTP2GO > Activity.
 
 ## Files
 - index.html - landing page
-- lead.js - lead relay (Resend)
-- vercel.json - keeps everything flat, routes /api/lead
+- lead.js - lead relay (SMTP2GO API)
+- vercel.json - routing (serves images + page, routes /api/lead)
 - package.json
+- hiral.png, abhishek.png - dentist headshots (same-origin)
